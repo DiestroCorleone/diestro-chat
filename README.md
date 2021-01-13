@@ -8,6 +8,7 @@ Plataforma de envío de mensajes directos, con características básicas de soci
 - Validación de e-mail y cambio de contraseña por correo electrónico
 - Subida y almacenamiento de imágenes como foto de perfil
 - Empleo de PHPMailer y PDO para funciones de correo electrónico y base de datos, respectivamente
+- Estructura de base de datos y procedimientos almacenados disponibles [acá](base_de_datos.sql)
 - Diseño responsive, CSS puro
 - Librería empleada para íconos: [FontAwesome 4](https://www.w3schools.com/icons/fontawesome_icons_intro.asp)
 
@@ -20,10 +21,5 @@ Demo de página de inicio: [https://diestrocorleone.github.io/diestro-chat/](htt
 - JavaScript
 - PHP
 - MySQL
-
-#### Tareas a realizar
-
-- [ ] Subir diagramas describiendo tablas de base de datos
-- [ ] Subir lista y descripción de procedimientos SQL
 
 *Este es un proyecto en desarrollo, y será actualizado.*
