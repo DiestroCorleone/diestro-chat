@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#222831">
+	<script src="control.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="control.js"></script>
+	<title>hola | diestroChat</title>
+</head>
+<body class="indexBody">
+<header class="parallax">
+	<div>
+		<i class="fa fa-fw fa-commenting-o fa-5x" id="logo"></i>
+		<h1>diestroChat</h1>
+		<h4>chat, sin vueltas</h4>
+	</div>
+</header>
+<aside>
+	<nav id="loginNav">
+		<ul>
+			<a href="#login"><li>
+				iniciar sesión
+			</li></a>
+			<a href="#signUp"><li>
+				registrarse
+			</li></a>	
+		</ul>
+	</nav>
+	<form id="login" action="php/login.php" method="POST">
+		<input type="text" id="usuario" name="usuario" placeholder="nombre de usuario..." minlength="4" required><br><br>
+		<input type="password" id="password" name="pass" placeholder="********" minlength="8" required><br><br>
+		<a href="olvido-pass.html"><p><small>Olvidé mi contraseña</small></p></a><br>
+		<input type="submit" name="login" value="iniciar sesión"><br><br>
+	</form>
+	<form id="signUp" action="php/signup.php" method="POST" onload="onLoad()">
+		<input type="email" id="email" name="email" placeholder="ejemplo@ejemplo.com" required><br><br>
+		<input type="text" id="usuario" name="usuario" placeholder="nombre de usuario..." minlength="4" required><br><br>
+		<input type="password" id="pass" name="pass" placeholder="una contraseña de al menos 8 caracteres" minlength="8" onblur="checkCoincidence()" required><br><br>
+		<input type="password" id="pass2" name="pass2" placeholder="repetir contraseña" minlength="8" oninput="checkCoincidence()" required><br><br>
+		<p><small id="warning"></small></p><br>
+		<input type="submit" name="login" id="submit" value="registrarse">
+	</form>
+</aside>
+<footer>
+	<p>Coded by Diestro<br><a href="mailto:matias.perez.mcd@gmail.com">Mail me!</a></p>
+</footer>
+</body>
+</html>

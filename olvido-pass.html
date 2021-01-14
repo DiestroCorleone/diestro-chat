@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#222831">
+	<script src="control.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>olvidé mi contraseña | diestroChat</title>
+</head>
+<body class="plainBody">
+<section>
+	<h1>no me estaría acordando mi contraseña</h1><br><br>
+	<p>Tranqui. Ingresá tu e-mail, te enviaremos un correo electrónico para restablecerla.</p><br><br>
+	<form class="formLeft" action="php/olvido-pass.php" method="POST">
+		<input type="email" name="email" id="email" placeholder="ejemplo@mail.com" required><br><br>
+		<input type="submit" name="submit" value="enviar e-mail">
+	</form>
+</section>
+<footer>
+	<p>Coded by Diestro<br><a href="mailto:matias.perez.mcd@gmail.com">Mail me!</a></p>
+</footer>	
+</body>
+</html>

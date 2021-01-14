@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;800&display=swap");
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body{
+	display: grid;
+	min-height: 100%;
+	font-family: Raleway;	
+}
+
+.indexBody{
+	grid-template-areas:
+		"header header aside aside"
+		"footer footer footer footer";
+	grid-template-rows: 1fr auto;
+	background-color: #222831;
+}
+
+.plainBody{
+	grid-template-areas:
+		"section"
+		"footer";
+	grid-template-rows: 1fr auto;
+	background-color: #ddd;
+}
+
+.homeBody{
+	grid-template-areas:
+		"nav nav nav"
+		"aside section section"
+		"footer footer footer";
+	grid-template-rows: auto minmax(80vh, 80vh) auto;
+	background-color: #ddd;	
+}
+
+.profileBody{
+	grid-template-areas:
+		"nav"
+		"section"
+		"footer";
+	grid-template-rows: auto 1fr auto;
+	background-color: #ddd;		
+}
+
+.scrollable{
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+header{
+	grid-area: header;
+	display: grid;
+	align-content: center;
+	background-size: cover;
+}
+
+header, section{
+	background-color: #DDDDDD;
+	background-image: url(img/logo.png);
+	background-blend-mode: overlay;
+	background-repeat: no-repeat;
+}
+
+section{
+	grid-area: section;
+	background-size: 50%;
+	background-position: center;
+}
+
+aside{
+	grid-area: aside;
+}
+
+footer{
+	grid-area: footer;
+}
+
+header div, article, #imagenPerfil, #imagenPerfil form{
+	margin: 0 auto;
+}
+
+h1, #logo{
+	color: #f05454;
+}
+
+.tituloConversacion{
+	position: sticky;
+	top: 0;
+	width: 100%;
+	padding: 0.5rem;
+}
+
+.tituloConversacion:hover,.resultadoBusqueda:hover{
+	cursor: pointer;
+}
+
+.plainBody h1{
+	font-size: 3rem;
+}
+
+.formLeft{
+	text-align: left;
+	width: 50%;
+}
+
+.noMarginTop, #nuevoMensajeConversacion form{
+	margin-top: 0;
+}
+
+.font-red{
+	color: red;
+}
+
+.font-green{
+	color: green;
+}
+
+.invisible{
+	display: none;
+}
+
+header, .homeBody aside, article, section, form, footer{
+	padding: 1rem;
+}
+
+aside form:not(:target), .homeBody section:not(:target){
+	display: none;
+}
+
+aside form:target, .homeBody section:target{
+	display: block;
+}
+
+form{
+	margin-top: 4.5rem;
+}
+
+#informacion, form{
+	text-align: center;
+}
+
+nav{
+	grid-area: nav;
+}
+
+#loginNav a{
+	width: 50%;
+	text-align: center;
+}
+
+nav ul{
+	display: flex;
+	justify-content: space-between;
+}
+
+nav li{
+	padding: 1.5rem;
+}
+
+nav li, input[type="submit"], .button, article, #imagenPerfil{
+	transition: background-color 300ms;
+}
+
+nav li:not(#logoNav):hover, #imagenPerfil:hover{
+	background-color: #f05454;
+	color: #30475E;
+}
+
+#logoNav{
+	font-size: 1.5rem;
+	padding-bottom: 0;
+}
+
+#navForm{
+	display: none;
+	margin: 0;
+	padding: 0;
+	width: 0;
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+aside ul, nav ul, section ul{
+	list-style-type: none;
+}
+
+input, .button, textarea{
+	padding: 0.5rem;
+	border: 2px solid #F05454;
+	font-family: Raleway;
+}
+
+input:not(.homeBodyInput){
+	width: 60%;	
+}
+
+input[type="submit"], .button, article{
+	background-color: #F05454;
+	color: #DDDDDD;
+	font-weight: bold;
+}
+
+.mensajeEnviado{
+	text-align: right;
+	background-color: #f28383;
+}
+
+.mensajeRecibido{
+	text-align: left;
+}
+
+input[type="submit"]:hover, .button:hover, .tituloConversacion{
+	background-color: #DDDDDD;
+	color: #F05454;	
+}
+
+nav, footer{
+	background-color: #30475E;
+	font-weight: bold;
+	color: #dddddd;
+}
+
+a{
+	text-decoration: none;
+	color: #f05454;
+}
+
+.homeBody section{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#historialConversaciones li:first-of-type, #cerrarConversaciones{
+	display: none;
+}
+
+#conversacion{
+	height: 80%;
+}
+
+#nuevoMensajeConversacion form{
+	height: 20%;
+}
+
+#nuevoMensaje form{
+	height: 100%;
+}
+
+#nuevoMensaje textarea{
+	resize: vertical;
+	min-height: 70%;
+}
+
+#nuevoMensaje input, #nuevoMensaje textarea, nav{
+	width: 100%;
+}
+
+#nuevoMensajeConversacion input[type="text"], #nuevoMensajeConversacion textarea{
+	float: left;
+}
+
+#nuevoMensajeConversacion input[type="text"]{
+	width: 50%;
+}
+
+#nuevoMensajeConversacion textarea, article{
+	width: 90%;
+}
+
+#nuevoMensajeConversacion textarea{
+	resize: none;
+}
+
+#nuevoMensajeConversacion input{
+	width: 10%;
+	float: right;
+}
+
+footer a, #login a p small, article, #informacion a{
+	transition: opacity 300ms;	
+}
+
+footer a:hover, #login a p small:hover, article:hover, #informacion a:hover{
+	opacity: 0.8;
+}
+
+#imagenPerfil{
+	width: 30%;
+	height: auto;
+	box-sizing: border-box;
+	background-color: #30475E;
+	border: 1rem solid #30475E;
+	text-align: center;
+	font-weight: bold;
+	color: #F05454;
+	display: grid;
+}
+
+#imagenPerfil form{
+	align-self: center;
+}
+
+#imagenPerfil form:hover p{
+	color: #30475E;
+}
+
+#imagenPerfil img{
+	width: 100%;
+	object-fit: cover;
+}
+
+#actualizarImagenPerfil{
+	display: none;
+}
+
+#actualizarImagenPerfil:target{
+	display: block;
+}
+
+.scrollable::-webkit-scrollbar{
+	width: 1rem;
+}
+
+.scrollable::-webkit-scrollbar-track{
+  background: #ddd;
+}
+
+.scrollable::-webkit-scrollbar-thumb{
+  background: #f28383; 
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover{
+  background: #f05454; 
+}
+
+@media screen and (max-width: 800px){
+	.indexBody{
+		grid-template-areas: 
+			"header"
+			"aside"
+			"footer";
+		grid-template-rows: auto 1fr auto;
+	}
+
+	.homeBody{
+		grid-template-areas: 
+			"nav"
+			"aside"
+			"section"
+			"footer";
+		grid-template-rows: auto auto 1fr auto;		
+	}
+
+	#historialConversaciones:not(:target) li:first-of-type{
+		display: inherit;
+	}
+
+	#historialConversaciones:not(:target) li{
+		display: none;
+	}
+
+	#historialConversaciones:target li{
+		display: inherit;
+	}
+
+	#historialConversaciones:target li:first-of-type{
+		display: none;
+	}	
+
+	form:not(#nuevoMensajeConversacion form){
+		margin-top: 0;
+	}
+
+	#nuevoMensajeConversacion textarea{
+		margin-bottom: 1rem;
+	}
+
+	.formLeft, .formLeft input, #nuevoMensajeConversacion textarea, #nuevoMensajeConversacion input,#imagenPerfil{
+		width: 100%;
+	}
+
+	.desaparece{
+		display: none;
+	}
+}

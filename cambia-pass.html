@@ -1,0 +1,34 @@
+<?php
+session_start();
+$codigo = $_SESSION["codigo_reset"];
+$_SESSION["codigo_reset"] = $codigo;
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#222831">
+	<script src="control.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>actualizar contraseña | diestroChat</title>
+</head>
+<body class="plainBody">
+<section>
+	<h1>winds of change (your password)</h1><br><br>
+	<p>Hora de una nueva contraseña.</p><br><br>
+	<form class="formLeft noMarginTop" action="php/nuevo-pass.php" method="POST" onload="onLoad()">
+		<input type="email" id="email" name="email" placeholder="ejemplo@ejemplo.com" required><br><br>
+		<input type="text" id="usuario" name="usuario" placeholder="nombre de usuario..." minlength="4" required><br><br>
+		<input type="password" id="pass" name="pass" placeholder="********" minlength="8" onblur="checkCoincidence()" required><br><br>
+		<input type="password" id="pass2" name="pass2" placeholder="********" minlength="8" oninput="checkCoincidence()" required><br><br>
+		<p><small id="warning"></small></p><br>
+		<input type="submit" name="submit" id="submit" value="actualizar contraseña">
+	</form>
+</section>
+<footer>
+	<p>Coded by Diestro<br><a href="mailto:matias.perez.mcd@gmail.com">Mail me!</a></p>
+</footer>	
+</body>
+</html>
