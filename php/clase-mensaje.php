@@ -91,11 +91,7 @@ class Mensaje{
 			if($respuesta == false or $respuesta->rowCount() == 0){
 				return false;
 			}else if($respuesta->rowCount()>0){
-				echo "<li><a><article class='mensajeEnviado'>
-						<p>".$mensaje."</p>
-						<p><small>".date('Y-m-d H:i:s')."</p>
-					</article></a></li><br>";
-				return true;
+				$this->abrirConversacion($usuarioEnvia,$usuarioRecibe);
 			}
 		}catch(PDOException $pe){
 			die("No se puede conectar a la base de datos!".$pe->getMessage());
