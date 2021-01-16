@@ -49,7 +49,7 @@ function enviarMensaje(){
 	var mensaje = document.getElementById("mensaje").value;
 	var usuarioRecibe = document.getElementById("usuarioRecibe").value;
 	const http = new XMLHttpRequest();
-	const url = 'https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/php/enviar-mensaje.php';
+	const url = 'http://urlejemplo/php/enviar-mensaje.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
@@ -57,7 +57,7 @@ function enviarMensaje(){
 				alert("Verificá los datos ingresados!");
 			}else{
 				alert("Mensaje enviado!");
-				window.location.href = "https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/home.php";
+				window.location.href = "http://urlejemplo/home.php";
 			}	
 		}else{
 			console.log(this.readyState +" "+ this.status);
@@ -72,7 +72,7 @@ function enviarMensaje(){
 function enviarMensajeConversacion(){
 	var mensaje = document.getElementById("mensajeConversacion").value;
 	const http = new XMLHttpRequest();
-	const url = 'https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/php/enviar-mensaje-conversacion.php';
+	const url = 'http://urlejemplo/php/enviar-mensaje-conversacion.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
@@ -98,7 +98,7 @@ function enviarMensajeConversacion(){
 
 function mostrarConversaciones(){
 	const http = new XMLHttpRequest();
-	const url = 'https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/php/on-load.php';
+	const url = 'http://urlejemplo/php/on-load.php';
 	
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
@@ -117,12 +117,13 @@ function abrirConversacion(usuarioRecibe){
 	let conversacionComillasSimples = document.getElementById("conversacion").innerHTML.replace(regexComillas,"\'");
 	let conversacion = conversacionComillasSimples.replace(regexEspacios, '');
 	const http = new XMLHttpRequest();
-	const url = 'https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/php/abrir-conversacion.php';
+	const url = 'http://urlejemplo/php/abrir-conversacion.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
 			let respuesta = this.response.replace(regexEspacios, '');
 			if(!(conversacion === respuesta)){
+					console.log(conversacion +"//"+ respuesta);
 					document.getElementById("conversacion").innerHTML = this.response;
 					document.getElementById('finalConversacion').scrollIntoView();
 				if(document.getElementById("formConversacion").classList.contains("invisible")){		
@@ -141,7 +142,7 @@ function abrirConversacion(usuarioRecibe){
 
 function mostrarInformacion(){
 	const http = new XMLHttpRequest();
-	const url = 'https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/php/mostrar-informacion.php';
+	const url = 'http://urlejemplo/php/mostrar-informacion.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
@@ -156,7 +157,7 @@ function mostrarInformacion(){
 
 function mostrarImagenPerfil(){
 	const http = new XMLHttpRequest();
-	const url = 'https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/php/mostrar-imagen-perfil.php';
+	const url = 'http://urlejemplo/php/mostrar-imagen-perfil.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
@@ -179,7 +180,7 @@ function almacenarUsuarioBuscar($form){
 
 function mostrarInfoUsuario(){
 	const http = new XMLHttpRequest();
-	const url = 'https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/php/mostrar-info-usuario.php';
+	const url = 'http://urlejemplo/php/mostrar-info-usuario.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
@@ -194,7 +195,7 @@ function mostrarInfoUsuario(){
 
 function mostrarImagenUsuario(){
 	const http = new XMLHttpRequest();
-	const url = 'https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/php/mostrar-imagen-usuario.php';
+	const url = 'http://urlejemplo/php/mostrar-imagen-usuario.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
@@ -214,7 +215,7 @@ function eliminarUsuarioAlmacenado(){
 function buscarUsuarios(){
 	var usuarioABuscar = document.getElementById("usuarioABuscar").value;
 	const http = new XMLHttpRequest();
-	const url = 'https://cempre.com.ar/mindgrow.ar/mperez/diestro-chat/php/buscar-usuarios.php';
+	const url = 'http://urlejemplo/php/buscar-usuarios.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
