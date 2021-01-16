@@ -18,7 +18,7 @@ $usuarioEnvia = $_SESSION["usuarioEnvia"];
 	<ul>
 		<a><li id="logoNav">diestroChat<i class="fa fa-fw fa-commenting-o" id="logo"></i></li></a>
 		<a href="#nuevoMensaje"><li><i class="fa fa-fw fa-edit"></i><span class="desaparece">nuevo mensaje</span></li></a>
-		<a onclick="eliminarUsuarioAlmacenado();" class="pointer"><li><form id="navForm" method="POST" action="php/eliminar-usuario-almacenado.php"></form><i class="fa fa-fw fa-address-card"></i><span class="desaparece">usuarios</span></li></a>
+		<a onclick="eliminarUsuarioAlmacenado();" class="pointer"><li><form id="navForm" class="invisible" method="POST" action="php/eliminar-usuario-almacenado.php"></form><i class="fa fa-fw fa-address-card"></i><span class="desaparece">usuarios</span></li></a>
 		<a href="profile.php"><li><i class="fa fa-fw fa-user"></i><span class="desaparece">mi perfil</span></li></a>
 		<a href="php/logout.php" onclick="return confirm('Seguro que deseás salir?')"><li><i class="fa fa-fw fa-sign-out"></i><span class="desaparece">cerrar sesión</span></li></a>
 	</ul>
