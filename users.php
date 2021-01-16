@@ -16,7 +16,7 @@ if(!empty($_SESSION["usuarioRecibe"])){
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>usuarios | diestroChat</title>
 </head>
-<body class="profileBody" onload="mostrarInfoUsuario();mostrarImagenUsuario();">
+<body class="profileBody" onload="mostrarInfoUsuario();mostrarImagenUsuario();checkearMensajeNuevo();">
 <nav id="homeNav">
 	<ul>
 		<a><li id="logoNav">diestroChat<i class="fa fa-fw fa-commenting-o" id="logo"></i></li></a>

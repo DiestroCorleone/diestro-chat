@@ -1,4 +1,6 @@
 var usuarioRecibeActual = null;
+var totalTemp = null;
+var totalInicial = null;
 
 function onLoad(){
 	submit = document.getElementById("submit");
@@ -233,4 +235,32 @@ function checkForUpdates(){
 		abrirConversacion(usuarioRecibeActual);
 	}
 	setTimeout(checkForUpdates,5000);
+}
+
+function checkearMensajeNuevo(){
+	totalMensajes();
+	if(totalTemp == null){
+		totalTemp = totalInicial;
+	}else if(totalTemp < totalInicial){
+		var notify = new Notification('diestroChat',{
+    		body: 'Tenés un nuevo mensaje!',
+ 		});
+ 		totalTemp = totalInicial;
+	}
+	setTimeout(checkearMensajeNuevo,5000);	
+}
+
+function totalMensajes(){
+	const http = new XMLHttpRequest();
+	const url = 'http://localhost/Diestro/post-curso/diestro-chat/php/total-mensajes.php';
+
+	http.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){			 
+			totalInicial = parseInt(this.response);
+		}else{
+			console.log(this.readyState+" "+this.status);
+		}
+	}
+	http.open("GET", url);
+	http.send();	
 }
