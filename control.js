@@ -110,15 +110,23 @@ function mostrarConversaciones(){
 }
 
 function abrirConversacion(usuarioRecibe){
+	let regexComillas = /\"/g;
+	let regexEspacios = /\s+/g;
+	let conversacionComillasSimples = document.getElementById("conversacion").innerHTML.replace(regexComillas,"\'");
+	let conversacion = conversacionComillasSimples.replace(regexEspacios, '');
 	const http = new XMLHttpRequest();
 	const url = 'http://urlejemplo/php/abrir-conversacion.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			document.getElementById("conversacion").innerHTML = this.response;
-			document.getElementById('finalConversacion').scrollIntoView();
-			if(document.getElementById("formConversacion").classList.contains("invisible")){		
-				document.getElementById("formConversacion").classList.remove("invisible");
+			let respuesta = this.response.replace(regexEspacios, '');
+			if(!(conversacion === respuesta)){
+					console.log(conversacion +"//"+ respuesta);
+					document.getElementById("conversacion").innerHTML = this.response;
+					document.getElementById('finalConversacion').scrollIntoView();
+				if(document.getElementById("formConversacion").classList.contains("invisible")){		
+					document.getElementById("formConversacion").classList.remove("invisible");
+				}
 			}
 		}else{
 			console.log(this.readyState+" "+this.status);
