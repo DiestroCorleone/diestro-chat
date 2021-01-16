@@ -97,5 +97,15 @@ class Mensaje{
 			die("No se puede conectar a la base de datos!".$pe->getMessage());
 		}
 	}	
-}	
+
+	public function totalMensajes($usuarioEnvia){
+		try{
+			$query = "CALL totalMensajes('".$usuarioEnvia."');";
+			$respuesta = $this->conn->query($query);
+			return $respuesta->fetchColumn();
+		}catch(PDOException $pe){
+			die("No se puede conectar a la base de datos!".$pe->getMessage());
+		}
+	}	
+}
 ?>
