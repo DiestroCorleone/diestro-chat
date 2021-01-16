@@ -77,9 +77,12 @@ function enviarMensajeConversacion(){
 			if(!this.response){
 				alert("Verificá los datos ingresados!");
 			}else{
-				document.getElementById("conversacion").innerHTML += this.response;
+				document.getElementById("conversacion").innerHTML = this.response;
 				document.getElementById("mensajeConversacion").value = null;
-				document.getElementById("conversacion").scrollTop = document.getElementById("conversacion").scrollHeight;
+				document.getElementById('finalConversacion').scrollIntoView();
+				if(document.getElementById("formConversacion").classList.contains("invisible")){		
+					document.getElementById("formConversacion").classList.remove("invisible");
+				}
 			}	
 		}else{
 			console.log(this.readyState +" "+ this.status);
@@ -215,4 +218,11 @@ function buscarUsuarios(){
 	http.open("POST", url);
 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	http.send('usuarioABuscar='+usuarioABuscar);	
+}
+
+function checkForUpdates(){
+	if(usuarioRecibeActual != null){
+		abrirConversacion(usuarioRecibeActual);
+	}
+	setTimeout(checkForUpdates,5000);
 }
