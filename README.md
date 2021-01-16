@@ -8,6 +8,7 @@ Plataforma de envío de mensajes directos, con características básicas de soci
 - Validación de e-mail y cambio de contraseña por correo electrónico
 - Subida y almacenamiento de imágenes como foto de perfil
 - Clases y métodos diferenciados en PHP para un código más limpio y mantenible
+- Conversaciones en (casi) tiempo real, actualizándose cada 5 segundos.
 - Empleo de [PHPMailer](https://github.com/PHPMailer/PHPMailer) y PDO para funciones de correo electrónico y base de datos, respectivamente
 - Estructura de base de datos y procedimientos almacenados disponibles [acá](base_de_datos.sql)
 - Diseño responsive, CSS puro
