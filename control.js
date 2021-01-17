@@ -45,6 +45,30 @@ function checkCoincidence(){
 	}
 }
 
+function notificar(){
+    if(!window.Notification){
+        console.log('El navegador no acepta notificaciones.');
+    }else{
+        // Checkear si se tienen permisos------------
+        if(Notification.permission === 'granted'){
+            // show notification here
+            console.log('Hay permiso para mostrar notificaciones');
+        }else{
+            // Pedir permiso a usuario------------
+            Notification.requestPermission().then(function (p) {
+                if(p === 'granted'){
+                    // show notification here
+                    console.log('Permiso para mostrar notificaciones.');
+                }else{
+                    console.log('El usuario no acepta notificaciones.');
+                }
+            }).catch(function (err) {
+                console.error(err);
+            });
+        }
+    }
+}
+
 function enviarMensaje(){
 	var mensaje = document.getElementById("mensaje").value;
 	var usuarioRecibe = document.getElementById("usuarioRecibe").value;
