@@ -23,7 +23,7 @@
 		}
 	],
 	"start_url": "http://urlejemplo/index.html",
-	"background_color": "#DDD",
+	"background_color": "#30475e",
 	"display": "fullscreen",
 	"theme_color": "#30475e"
 }
