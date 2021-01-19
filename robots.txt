@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /php/
+Disallow: /user-img/
+Crawl-delay: 20

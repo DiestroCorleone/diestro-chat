@@ -1,0 +1,29 @@
+{
+	"short_name": "diestroChat",
+	"name": "diestroChat: chat, sin vueltas",
+	"description": "Diestro Chat es la plataforma de mensajería instantánea que buscabas! Simple, segura, y respeta tu privacidad. Disponible para escritorio, Android y iOS. Registrate ya, es gratis!",
+	"icons": [
+		{
+			"src": "http://urlejemplo/img/favicon.ico",
+			"type": "image/ico",
+			"sizes": "32x32",
+			"purpose": "maskable any"
+		},
+		{
+			"src:": "http://urlejemplo/img/icon-sm.png",
+			"type": "image/png",
+			"sizes": "192x192",
+			"purpose": "maskable any"
+		},		
+		{
+			"src": "http://urlejemplo/img/icon.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "maskable any"
+		}
+	],
+	"start_url": "http://urlejemplo/index.html",
+	"background_color": "#DDD",
+	"display": "minimal-ui",
+	"theme_color": "#30475e"
+}

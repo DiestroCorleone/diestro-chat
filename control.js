@@ -276,7 +276,7 @@ function checkearMensajeNuevo(){
 
 function totalMensajes(){
 	const http = new XMLHttpRequest();
-	const url = 'http://localhost/Diestro/post-curso/diestro-chat/php/total-mensajes.php';
+	const url = 'http://localhosthttp://urlejemplo/php/total-mensajes.php';
 
 	http.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){			 

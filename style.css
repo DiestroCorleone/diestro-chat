@@ -363,6 +363,10 @@ footer a:hover, #login a p small:hover, article:hover, #informacion a:hover{
 		grid-template-rows: auto auto 1fr auto;		
 	}
 
+	#logoNav{
+		font-size: 1rem;
+	}
+
 	#historialConversaciones:not(:target) li:first-of-type{
 		display: inherit;
 	}
