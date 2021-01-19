@@ -24,6 +24,6 @@
 	],
 	"start_url": "http://urlejemplo/index.html",
 	"background_color": "#DDD",
-	"display": "minimal-ui",
+	"display": "fullscreen",
 	"theme_color": "#30475e"
 }
