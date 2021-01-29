@@ -3,9 +3,9 @@ self.addEventListener('install', function(event){
 	event.waitUntil(
 		caches.open('sw-cache').then(function(cache){
 			//archivos estáticos que conforman el shell de aplicación son llamados.
-			return cache.add('index.html');
-			return cache.add('style.css');
-			return cache.add('control.js');
+			return cache.add('http://urlejemplo/index.html');
+			return cache.add('http://urlejemplo/style.css');
+			return cache.add('http://urlejemplo/control.js');
 		})
 	);
 });
